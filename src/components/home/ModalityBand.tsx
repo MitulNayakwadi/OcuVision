@@ -144,7 +144,7 @@ export function ModalityBand() {
         titleId="modalities-title"
       />
 
-      <Reveal as="ul" stagger={0.12} className="mt-14 grid gap-card-gap lg:grid-cols-2">
+      <Reveal as="ul" stagger={0.12} className="mt-10 sm:mt-14 grid gap-6 md:grid-cols-2 lg:gap-card-gap">
         {MODALITIES.map((modality, i) => (
           <RevealItem as="li" key={modality.id} className="h-full">
             <GlassCard
@@ -155,7 +155,7 @@ export function ModalityBand() {
               {/* ---- Glyph plate ---- */}
               <div
                 className={cn(
-                  'relative flex h-[220px] items-center justify-center px-10 py-8',
+                  'relative flex h-[180px] sm:h-[200px] lg:h-[220px] items-center justify-center px-6 py-6 sm:px-10 sm:py-8',
                   modality.id === 'ffa'
                     ? 'bg-[radial-gradient(120%_120%_at_30%_20%,rgba(26,28,28,0.06),rgba(26,28,28,0.02))]'
                     : 'bg-[radial-gradient(120%_120%_at_30%_20%,rgba(255,90,60,0.09),rgba(184,122,75,0.05))]',
@@ -173,7 +173,7 @@ export function ModalityBand() {
               </div>
 
               {/* ---- Copy ---- */}
-              <div className="flex flex-1 flex-col border-t border-slate-hair p-8">
+              <div className="flex flex-1 flex-col border-t border-slate-hair p-6 sm:p-7 lg:p-8">
                 <Eyebrow tone="warm">
                   {modality.id === 'ffa' ? 'Contrast · Timed sequence' : 'Non-invasive · Single frame'}
                 </Eyebrow>

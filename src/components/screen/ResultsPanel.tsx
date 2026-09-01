@@ -47,8 +47,8 @@ export function ResultsPanel({
       className="space-y-card-gap"
     >
       {/* ---------------- Verdict ---------------- */}
-      <GlassCard radius="panel" className="p-7 lg:p-9">
-        <div className="flex flex-wrap items-center justify-between gap-4">
+      <GlassCard radius="panel" className="p-5 sm:p-7 lg:p-9">
+        <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
           <Eyebrow withRule tone="vitality">
             Step 03 · Report
           </Eyebrow>
@@ -57,11 +57,11 @@ export function ResultsPanel({
           </span>
         </div>
 
-        <div className="mt-8 flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-6 sm:mt-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
           <div className="min-w-0">
             <SeverityChip severity={result.severity} size="sm" />
 
-            <h2 className="mt-4 font-display text-[clamp(1.5rem,3.4vw,2.4rem)] uppercase leading-[1.02] text-charcoal">
+            <h2 className="mt-3 sm:mt-4 font-display text-[clamp(1.35rem,3.4vw,2.4rem)] uppercase leading-[1.05] text-charcoal">
               {result.detected ? VERDICT.positive : VERDICT.negative}
             </h2>
 
@@ -69,7 +69,7 @@ export function ResultsPanel({
                 nothing to stage, and inventing an "Early" chip would read as a
                 finding. */}
             {stage && stageStyle ? (
-              <p className="mt-4 flex flex-wrap items-center gap-3">
+              <p className="mt-3.5 sm:mt-4 flex flex-wrap items-center gap-2.5 sm:gap-3">
                 <span
                   className={cn(
                     'inline-flex h-7 items-center gap-2 rounded-chip border px-3 font-mono text-[10px] uppercase tracking-[0.1em]',
@@ -84,25 +84,25 @@ export function ResultsPanel({
                   />
                   {stage.label} stage
                 </span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-slate-cool">
+                <span className="font-mono text-[10.5px] sm:text-[11px] uppercase tracking-[0.1em] text-slate-cool">
                   CDR {stage.cdr[0].toFixed(2)}–{stage.cdr[1].toFixed(2)} band
                 </span>
               </p>
             ) : (
-              <p className="mt-4 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] text-[#1F7A4C]">
+              <p className="mt-3.5 sm:mt-4 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] text-[#1F7A4C]">
                 <Check className="h-3.5 w-3.5" />
                 No stage assigned
               </p>
             )}
 
-            <p className="mt-5 max-w-xl text-[13.5px] leading-relaxed text-slate-warm">
+            <p className="mt-4 sm:mt-5 max-w-xl text-[13px] sm:text-[13.5px] leading-relaxed text-slate-warm">
               {stage
                 ? stage.description
                 : 'The optic disc appearance falls within the physiological range on every measurement below. This is a negative glaucoma screen — it says nothing about any other condition in the same photograph.'}
             </p>
           </div>
 
-          <div className="shrink-0 sm:pl-6">
+          <div className="shrink-0 self-center sm:self-auto sm:pl-6">
             <MetricRing
               value={result.confidence}
               display={`${result.confidence.toFixed(1)}%`}
@@ -115,12 +115,12 @@ export function ResultsPanel({
       </GlassCard>
 
       {/* ---------------- Evidence ---------------- */}
-      <div className="grid gap-card-gap lg:grid-cols-[0.92fr_1.08fr]">
-        <GlassCard radius="panel" className="p-7">
+      <div className="grid gap-6 lg:gap-card-gap lg:grid-cols-[0.92fr_1.08fr]">
+        <GlassCard radius="panel" className="p-5 sm:p-7">
           <AttentionOverlay image={image} regions={result.attentionRegions} />
         </GlassCard>
 
-        <GlassCard radius="panel" className="flex flex-col p-7 lg:p-8">
+        <GlassCard radius="panel" className="flex flex-col p-5 sm:p-7 lg:p-8">
           <p className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-vitality-ink">
             Disc measurements
           </p>
@@ -227,17 +227,18 @@ export function ResultsPanel({
       <AdvisoryCard severity={result.severity} />
 
       {/* ---------------- Next ---------------- */}
-      <div className="flex flex-wrap items-center justify-between gap-4 rounded-panel border border-slate-hair bg-white/45 px-7 py-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-panel border border-slate-hair bg-white/45 p-5 sm:px-7 sm:py-6">
         <p className="max-w-md text-[12.5px] leading-relaxed text-slate-cool">
           Screening a second image discards this report. Nothing is stored, so there is
           no history to return to.
         </p>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
           <PillLink
             to="/#scope"
             variant="glass"
             size="md"
+            className="w-full sm:w-auto text-center justify-center"
             iconRight={<ArrowUpRight className="h-3.5 w-3.5" />}
           >
             What this does not detect
@@ -246,6 +247,7 @@ export function ResultsPanel({
             variant="dark"
             size="md"
             onClick={onReset}
+            className="w-full sm:w-auto text-center justify-center"
             iconRight={<EyeScan className="h-4 w-4" />}
           >
             Screen another image

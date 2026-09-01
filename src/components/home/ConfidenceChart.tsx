@@ -91,7 +91,7 @@ export function ConfidenceChart({
       </div>
 
       {/* ---------- Plot / table ---------- */}
-      <div className="mt-6 h-[268px]">
+      <div className="mt-6 h-[268px] w-full min-w-0">
         {asTable ? (
           <div className="h-full overflow-auto" data-lenis-prevent>
             <table className="w-full border-collapse text-left">
@@ -137,7 +137,7 @@ export function ConfidenceChart({
           </div>
         ) : (
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={data} margin={{ top: 22, right: 46, bottom: 4, left: -18 }}>
+            <LineChart data={data} margin={{ top: 22, right: 32, bottom: 4, left: -22 }}>
               <CartesianGrid
                 vertical={false}
                 stroke="rgba(26,28,28,0.07)"

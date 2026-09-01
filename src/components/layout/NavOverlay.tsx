@@ -70,8 +70,8 @@ export function NavOverlay({
             </div>
           </div>
 
-          <div className="relative flex h-full flex-col overflow-y-auto px-gutter pb-10 pt-24 lg:px-container lg:pt-32">
-            <div className="mx-auto flex w-full max-w-container flex-1 flex-col gap-12 lg:grid lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-card-gap">
+          <div className="relative flex h-full flex-col overflow-y-auto px-gutter pb-10 pt-20 sm:pt-24 lg:px-container lg:pt-32">
+            <div className="mx-auto flex w-full max-w-container flex-1 flex-col gap-10 md:grid md:grid-cols-[1.1fr_0.9fr] md:items-start md:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-card-gap">
               {/* ---------- Primary routes ---------- */}
               <nav aria-label="Primary">
                 <ul>

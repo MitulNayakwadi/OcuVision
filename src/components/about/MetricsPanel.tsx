@@ -32,15 +32,15 @@ export function MetricsPanel() {
         body="Glaucoma-detection figures from the held-out test split of the research configuration — every number below describes the one task this model was trained and evaluated on. They describe the model as evaluated, not a certified device; the prototype in this browser is a demonstration and its outputs are illustrative."
       />
 
-      <div className="mt-14 grid gap-card-gap lg:grid-cols-[1.12fr_0.88fr]">
+      <div className="mt-10 sm:mt-14 grid gap-6 lg:gap-card-gap lg:grid-cols-[1.12fr_0.88fr]">
         <FadeIn>
-          <GlassCard radius="panel" className="h-full p-7 lg:p-9">
+          <GlassCard radius="panel" className="h-full p-5 sm:p-7 lg:p-9">
             <p className="flex items-center gap-2.5 font-mono text-[9.5px] uppercase tracking-[0.14em] text-vitality-ink">
               <Target className="h-3.5 w-3.5" />
               Glaucoma detection quality
             </p>
 
-            <div className="mt-9 space-y-9">
+            <div className="mt-7 sm:mt-9 space-y-7 sm:space-y-9">
               {bars.map((metric) => (
                 <ProgressBar
                   key={metric.id}
@@ -55,7 +55,7 @@ export function MetricsPanel() {
         </FadeIn>
 
         <FadeIn delay={0.12}>
-          <div className="flex h-full flex-col rounded-panel bg-charcoal p-7 lg:p-9">
+          <div className="flex h-full flex-col rounded-panel bg-charcoal p-5 sm:p-7 lg:p-9">
             {figure && (
               <>
                 <p className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-white/45">

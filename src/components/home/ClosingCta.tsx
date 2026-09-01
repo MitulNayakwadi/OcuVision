@@ -22,7 +22,7 @@ export function ClosingCta({
   return (
     <section
       aria-labelledby="closing-title"
-      className="relative overflow-hidden px-gutter py-section lg:px-container"
+      className="relative overflow-hidden px-gutter py-14 sm:py-20 lg:py-section lg:px-container"
     >
       {/* Warm bloom, echoing the hero's ambient light. */}
       <div
@@ -39,7 +39,7 @@ export function ClosingCta({
           Screen a retinal image
         </h2>
 
-        <RevealItem className="mt-8 w-full">
+        <RevealItem className="mt-6 sm:mt-8 w-full">
           <OutlineDisplay strokeWidth={2} lines={['SCREEN', 'AN IMAGE']}>
             SCREEN AN IMAGE
           </OutlineDisplay>
@@ -47,18 +47,18 @@ export function ClosingCta({
 
         <RevealItem
           as="p"
-          className="mt-10 max-w-xl text-[15px] leading-relaxed text-slate-warm"
+          className="mt-6 sm:mt-10 max-w-xl text-[14px] sm:text-[15px] leading-relaxed text-slate-warm"
         >
           Drop in a colour fundus photograph or an angiogram frame and get a graded
           class, an attention map and a triage window — in about the time it takes to
           look up from the camera.
         </RevealItem>
 
-        <RevealItem className="mt-9 flex flex-wrap items-center justify-center gap-3.5">
-          <ShimmerButton to="/screen" iconRight={<ArrowRight className="h-4 w-4" />}>
+        <RevealItem className="mt-8 sm:mt-9 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">
+          <ShimmerButton to="/screen" iconRight={<ArrowRight className="h-4 w-4" />} className="w-full sm:w-auto">
             Initiate Scan Sequence
           </ShimmerButton>
-          <PillLink to={secondary.to} variant="outline" size="lg">
+          <PillLink to={secondary.to} variant="outline" size="lg" className="w-full sm:w-auto text-center justify-center">
             {secondary.label}
           </PillLink>
         </RevealItem>

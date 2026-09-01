@@ -31,11 +31,11 @@ export function Accordion({ steps }: { steps: PipelineStep[] }) {
                 aria-expanded={expanded}
                 aria-controls={panelId}
                 onClick={() => setOpen(expanded ? null : step.id)}
-                className="group flex w-full items-center gap-4 py-5 text-left transition-colors duration-200 sm:gap-6"
+                className="group flex w-full items-center gap-3.5 py-4 text-left transition-colors duration-200 sm:gap-6 sm:py-5"
               >
                 <span
                   className={cn(
-                    'grid h-10 w-10 shrink-0 place-items-center rounded-full font-mono text-[12px] font-medium transition-all duration-300 ease-clinical',
+                    'grid h-8 w-8 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-full font-mono text-[11px] sm:text-[12px] font-medium transition-all duration-300 ease-clinical',
                     expanded
                       ? 'bg-vitality text-white'
                       : 'bg-white/70 text-slate-cool ring-1 ring-inset ring-slate-hair group-hover:text-charcoal',

@@ -19,8 +19,8 @@ export function SolutionAccordion() {
         body={SOLUTION_INTRO}
       />
 
-      <FadeIn className="mt-14">
-        <GlassCard radius="panel" className="px-6 py-2 sm:px-9 sm:py-4">
+      <FadeIn className="mt-10 sm:mt-14">
+        <GlassCard radius="panel" className="px-4 py-2 sm:px-9 sm:py-4">
           <Accordion steps={PIPELINE_STEPS} />
         </GlassCard>
       </FadeIn>

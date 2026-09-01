@@ -32,7 +32,7 @@ export function PageHero({
   return (
     <section
       className={cn(
-        'relative overflow-hidden px-gutter pb-14 pt-[124px] lg:px-container lg:pb-20 lg:pt-[156px]',
+        'relative overflow-hidden px-gutter pb-10 pt-[100px] sm:pb-14 sm:pt-[124px] lg:px-container lg:pb-20 lg:pt-[156px]',
         className,
       )}
     >
@@ -61,23 +61,23 @@ export function PageHero({
             </OutlineDisplay>
           </RevealItem>
 
-          <div className="mt-11 flex flex-col gap-8 border-t border-slate-hair pt-8 lg:flex-row lg:items-start lg:justify-between lg:gap-card-gap">
+          <div className="mt-8 flex flex-col gap-6 border-t border-slate-hair pt-6 sm:mt-11 sm:gap-8 sm:pt-8 lg:flex-row lg:items-start lg:justify-between lg:gap-card-gap">
             <RevealItem
               as="p"
-              className="max-w-prose text-[15.5px] leading-relaxed text-slate-warm"
+              className="max-w-prose text-[14.5px] leading-relaxed text-slate-warm sm:text-[15.5px]"
             >
               {body}
             </RevealItem>
 
             {meta && (
               <RevealItem className="shrink-0">
-                <dl className="flex flex-wrap gap-x-10 gap-y-5 lg:justify-end">
+                <dl className="grid grid-cols-2 gap-x-6 gap-y-4 sm:flex sm:flex-wrap sm:gap-x-10 sm:gap-y-5 lg:justify-end">
                   {meta.map((entry) => (
-                    <div key={entry.label} className="min-w-[7.5rem]">
+                    <div key={entry.label} className="min-w-0 sm:min-w-[7.5rem]">
                       <dt className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-slate-cool">
                         {entry.label}
                       </dt>
-                      <dd className="mt-1.5 font-display text-[14.5px] uppercase leading-tight text-charcoal">
+                      <dd className="mt-1 font-display text-[13.5px] uppercase leading-tight text-charcoal sm:mt-1.5 sm:text-[14.5px]">
                         {entry.value}
                       </dd>
                     </div>

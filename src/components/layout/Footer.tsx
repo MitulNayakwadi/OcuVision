@@ -241,11 +241,11 @@ export function Footer() {
 
   return (
     <>
-      <footer className="relative mt-section border-t border-slate-hair">
-        <div className="mx-auto max-w-[1400px] px-gutter py-16 lg:px-container">
-          <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <footer className="relative mt-16 sm:mt-24 lg:mt-section border-t border-slate-hair">
+        <div className="mx-auto max-w-[1400px] px-gutter py-12 sm:py-16 lg:px-container">
+          <div className="grid gap-8 sm:gap-10 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
             {/* ---------- Brand ---------- */}
-            <div className="max-w-sm">
+            <div className="max-w-sm sm:col-span-2 md:col-span-1">
               <div className="flex items-center gap-2.5">
                 <LogoMark className="h-9 w-9" />
                 <span className="font-display text-[15px] uppercase text-charcoal">

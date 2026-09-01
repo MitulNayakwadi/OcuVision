@@ -89,7 +89,7 @@ export function ProfileDropdown({ className }: { className?: string }) {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={reduced ? { opacity: 0 } : { opacity: 0, y: -6, scale: 0.98 }}
               transition={{ duration: reduced ? 0 : 0.22, ease: [0.22, 1, 0.36, 1] }}
-              className="glass-solid absolute right-0 top-[calc(100%+10px)] w-[17rem] origin-top-right rounded-card p-2"
+              className="glass-solid absolute right-0 top-[calc(100%+10px)] w-[17rem] max-w-[calc(100vw-24px)] origin-top-right rounded-card p-2"
             >
               <div className="mb-1 flex items-start gap-3 rounded-card bg-vitality-soft/60 px-3 py-3">
                 <Shield className="mt-0.5 h-4 w-4 shrink-0 text-vitality-ink" />

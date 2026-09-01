@@ -41,15 +41,15 @@ export function Header() {
             : 'border-b border-transparent',
         )}
       >
-        <div className="mx-auto flex h-[76px] max-w-[1400px] items-center justify-between gap-6 px-gutter lg:px-container">
+        <div className="mx-auto flex h-[68px] sm:h-[76px] max-w-[1400px] items-center justify-between gap-4 sm:gap-6 px-gutter lg:px-container">
           {/* ---------- Brand ---------- */}
           <Link
             to="/"
             className="group flex shrink-0 items-center gap-2.5"
             aria-label={`${BRAND.name} home`}
           >
-            <LogoMark className="h-9 w-9 transition-transform duration-300 ease-clinical group-hover:scale-105" />
-            <span className="font-display text-[15px] uppercase tracking-[0.01em] text-charcoal">
+            <LogoMark className="h-8 w-8 sm:h-9 sm:w-9 transition-transform duration-300 ease-clinical group-hover:scale-105" />
+            <span className="font-display text-[14px] sm:text-[15px] uppercase tracking-[0.01em] text-charcoal">
               {BRAND.name}
             </span>
           </Link>

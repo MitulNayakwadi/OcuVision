@@ -44,17 +44,18 @@ export function MissionTabs() {
         body="Four views of the same commitment — the problem being removed, the endpoint being aimed at, the people accountable for it, and the method that has to hold for any of it to mean anything."
       />
 
-      <FadeIn className="mt-12">
+      <FadeIn className="mt-8 sm:mt-12">
         <Tabs
           items={KEYS.map(({ id }) => ({ id, label: MISSION_TABS[id].title }))}
           active={active}
           onChange={setActive}
           layoutGroup={LAYOUT_GROUP}
+          scrollable
           label="Mission, vision, team and research"
         />
       </FadeIn>
 
-      <div className="mt-9">
+      <div className="mt-6 sm:mt-9">
         {KEYS.map(({ id, Icon, aside }) => (
           <TabPanel key={id} layoutGroup={LAYOUT_GROUP} id={id} active={active === id}>
             <motion.div
@@ -63,14 +64,14 @@ export function MissionTabs() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: reduced ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
-              <GlassCard radius="panel" className="p-7 lg:p-10">
-                <div className="grid gap-9 lg:grid-cols-[15rem_1fr] lg:gap-card-gap">
-                  <div className="flex flex-col gap-5">
+              <GlassCard radius="panel" className="p-5 sm:p-7 lg:p-10">
+                <div className="grid gap-6 md:grid-cols-[13rem_1fr] md:gap-8 lg:grid-cols-[15rem_1fr] lg:gap-card-gap">
+                  <div className="flex flex-col gap-4 sm:gap-5">
                     <span
                       aria-hidden="true"
-                      className="grid h-14 w-14 place-items-center rounded-full bg-chrome text-charcoal shadow-[inset_0_1px_2px_rgba(255,255,255,0.9)]"
+                      className="grid h-12 w-12 sm:h-14 sm:w-14 place-items-center rounded-full bg-chrome text-charcoal shadow-[inset_0_1px_2px_rgba(255,255,255,0.9)]"
                     >
-                      <Icon className="h-6 w-6" />
+                      <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                     </span>
 
                     <p className="font-display text-[clamp(1.2rem,2.4vw,1.6rem)] uppercase leading-tight text-charcoal">
@@ -81,7 +82,7 @@ export function MissionTabs() {
                       {aside}
                     </p>
 
-                    <span aria-hidden="true" className="h-px w-16 bg-slate-hair lg:w-full" />
+                    <span aria-hidden="true" className="h-px w-16 bg-slate-hair md:w-full" />
                   </div>
 
                   <div>

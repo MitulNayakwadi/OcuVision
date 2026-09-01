@@ -20,13 +20,13 @@ export function WhyWeBuilt() {
       <Reveal
         as="ul"
         stagger={0.08}
-        className="mt-16 grid gap-px overflow-hidden rounded-panel bg-slate-hair sm:grid-cols-2"
+        className="mt-10 sm:mt-16 grid gap-px overflow-hidden rounded-panel bg-slate-hair sm:grid-cols-2"
       >
         {WHY_WE_BUILT.map((item) => (
           <RevealItem
             as="li"
             key={item.number}
-            className="flex flex-col bg-white/60 p-8 backdrop-blur-[18px] lg:p-10"
+            className="flex flex-col bg-white/60 p-6 sm:p-8 backdrop-blur-[18px] lg:p-10"
           >
             <div className="flex items-baseline gap-4">
               <span

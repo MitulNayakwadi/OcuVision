@@ -103,8 +103,8 @@ export function UploadZone({
   };
 
   return (
-    <GlassCard radius="panel" className="p-7 lg:p-9">
-      <div className="flex flex-wrap items-center justify-between gap-4">
+    <GlassCard radius="panel" className="p-5 sm:p-7 lg:p-9">
+      <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
         <Eyebrow withRule tone="vitality">
           Step 01 · Retinal image
         </Eyebrow>
@@ -131,7 +131,7 @@ export function UploadZone({
         }}
         onDrop={onDrop}
         className={cn(
-          'relative mt-7 overflow-hidden rounded-card border-2 border-dashed transition-colors duration-200 ease-clinical',
+          'relative mt-5 sm:mt-7 overflow-hidden rounded-card border-2 border-dashed transition-colors duration-200 ease-clinical',
           'focus-within:border-vitality focus-within:ring-2 focus-within:ring-vitality/30',
           dragging
             ? 'border-vitality bg-vitality-soft/70'
@@ -156,23 +156,23 @@ export function UploadZone({
         {image ? (
           <ImagePreview image={image} onClear={onClear} />
         ) : (
-          <div className="flex flex-col items-center px-6 py-14 text-center">
+          <div className="flex flex-col items-center px-4 py-10 text-center sm:px-6 sm:py-14">
             <motion.span
               aria-hidden="true"
               animate={reduced || dragging ? undefined : { y: [0, -5, 0] }}
               transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
-              className="flex h-16 w-16 items-center justify-center rounded-full bg-chrome shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_6px_18px_rgba(26,28,28,0.09)]"
+              className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-chrome shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_6px_18px_rgba(26,28,28,0.09)]"
             >
-              <Upload className="h-6 w-6 text-charcoal" />
+              <Upload className="h-5 w-5 sm:h-6 sm:w-6 text-charcoal" />
             </motion.span>
 
-            <p className="mt-6 font-display text-[15px] uppercase tracking-[0.01em] text-charcoal">
+            <p className="mt-5 sm:mt-6 font-display text-[14px] sm:text-[15px] uppercase tracking-[0.01em] text-charcoal">
               {dragging ? 'Release to load' : 'Drop a fundus image here'}
             </p>
 
             <p
               id={`${inputId}-hint`}
-              className="mt-2.5 max-w-sm text-[13px] leading-relaxed text-slate-warm"
+              className="mt-2 max-w-sm text-[12.5px] sm:text-[13px] leading-relaxed text-slate-warm"
             >
               A colour fundus photograph or an angiogram frame. Nothing leaves your
               browser — the image is held in memory for this session only.
@@ -180,7 +180,7 @@ export function UploadZone({
 
             <label
               htmlFor={inputId}
-              className="mt-7 inline-flex h-11 cursor-pointer items-center gap-2 rounded-chip bg-charcoal px-5 text-sm font-medium text-canvas transition-transform duration-200 ease-clinical hover:scale-[1.02]"
+              className="mt-6 sm:mt-7 inline-flex h-11 cursor-pointer items-center gap-2 rounded-chip bg-charcoal px-5 text-sm font-medium text-canvas transition-transform duration-200 ease-clinical hover:scale-[1.02]"
             >
               <EyeScan className="h-4 w-4" />
               Browse files
@@ -201,7 +201,7 @@ export function UploadZone({
       )}
 
       {/* ---------------- Analyse ---------------- */}
-      <div className="mt-7 flex flex-wrap items-center justify-between gap-4 border-t border-slate-hair pt-6">
+      <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-slate-hair pt-5 sm:pt-6">
         <p className="max-w-xs text-[11.5px] leading-relaxed text-slate-cool">
           {image
             ? 'Inference runs locally against the demonstration model. Results are illustrative.'
@@ -213,6 +213,7 @@ export function UploadZone({
           size="lg"
           disabled={!image}
           onClick={onAnalyze}
+          className="w-full sm:w-auto"
           iconRight={<EyeScan className="h-4 w-4" />}
         >
           Run analysis
@@ -230,7 +231,7 @@ function ImagePreview({
   onClear: () => void;
 }) {
   return (
-    <div className="grid gap-6 p-6 sm:grid-cols-[minmax(0,11rem)_1fr] sm:items-center">
+    <div className="grid gap-5 p-4 sm:p-6 sm:grid-cols-[minmax(0,11rem)_1fr] sm:items-center">
       <div className="relative aspect-square overflow-hidden rounded-card border border-slate-hair bg-charcoal">
         {image.isDicom ? (
           <div className="flex h-full flex-col items-center justify-center gap-3 px-4 text-center">

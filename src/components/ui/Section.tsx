@@ -25,7 +25,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        'relative px-gutter py-section lg:px-container',
+        'relative px-gutter py-14 sm:py-20 lg:py-section lg:px-container',
         // Anchored sections must clear the fixed header when jumped to.
         id && 'scroll-mt-[92px]',
         className,

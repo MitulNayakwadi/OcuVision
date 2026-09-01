@@ -22,27 +22,27 @@ export function IntelligencePanel() {
         titleId="architecture-title"
       />
 
-      <div className="mt-14 grid gap-card-gap lg:grid-cols-[0.92fr_1.08fr]">
+      <div className="mt-10 grid gap-6 sm:mt-14 lg:gap-card-gap lg:grid-cols-[0.92fr_1.08fr]">
         {/* ---------- The claim ---------- */}
         <Reveal>
           <RevealItem>
-            <GlassCard variant="well" radius="panel" className="flex h-full flex-col p-8 lg:p-10">
-              <p className="text-[clamp(1rem,1.5vw,1.15rem)] leading-relaxed text-charcoal">
+            <GlassCard variant="well" radius="panel" className="flex h-full flex-col p-6 sm:p-8 lg:p-10">
+              <p className="text-[clamp(0.95rem,1.5vw,1.15rem)] leading-relaxed text-charcoal">
                 {INTELLIGENCE.body}
               </p>
 
-              <div className="mt-10 border-t border-slate-hair pt-8">
+              <div className="mt-7 border-t border-slate-hair pt-6 sm:mt-10 sm:pt-8">
                 <StatRow />
               </div>
 
-              <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-slate-hair pt-8">
-                <ShimmerButton to="/screen" iconRight={<ArrowRight className="h-4 w-4" />}>
+              <div className="mt-7 flex flex-wrap items-center gap-4 border-t border-slate-hair pt-6 sm:mt-10 sm:pt-8">
+                <ShimmerButton to="/screen" iconRight={<ArrowRight className="h-4 w-4" />} className="w-full sm:w-auto">
                   Initiate Scan Sequence
                 </ShimmerButton>
                 <p className="text-[12px] leading-snug text-slate-cool">
                   One colour fundus photograph.
-                  <br />
-                  Nothing leaves this tab.
+                  <br className="hidden sm:inline" />
+                  {' '}Nothing leaves this tab.
                 </p>
               </div>
             </GlassCard>
@@ -50,12 +50,12 @@ export function IntelligencePanel() {
         </Reveal>
 
         {/* ---------- The four supports ---------- */}
-        <Reveal as="ul" stagger={0.09} className="flex flex-col">
+        <Reveal as="ul" stagger={0.09} className="flex flex-col md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-6 lg:flex lg:flex-col">
           {INTELLIGENCE.points.map((point, i) => (
             <RevealItem
               as="li"
               key={point.title}
-              className="group grid grid-cols-[2.75rem_1fr] gap-x-5 border-b border-slate-hair py-7 first:pt-0 last:border-b-0 last:pb-0"
+              className="group grid grid-cols-[2.5rem_1fr] gap-x-4 border-b border-slate-hair py-5 first:pt-0 last:border-b-0 last:pb-0 sm:grid-cols-[2.75rem_1fr] sm:gap-x-5 sm:py-6 md:border-b md:py-4 lg:py-7"
             >
               <span
                 aria-hidden="true"
@@ -65,10 +65,10 @@ export function IntelligencePanel() {
               </span>
 
               <div>
-                <h3 className="font-display text-[15px] uppercase leading-snug tracking-[0.005em] text-charcoal">
+                <h3 className="font-display text-[14px] uppercase leading-snug tracking-[0.005em] text-charcoal sm:text-[15px]">
                   {point.title}
                 </h3>
-                <p className="mt-2.5 text-[14px] leading-relaxed text-slate-warm">
+                <p className="mt-2 text-[13.5px] leading-relaxed text-slate-warm sm:mt-2.5 sm:text-[14px]">
                   {point.body}
                 </p>
               </div>

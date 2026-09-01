@@ -95,7 +95,7 @@ export function Screen() {
       <Section id="console" className="!pt-0">
         <ProcessTrack reached={reached} />
 
-        <div className="mt-card-gap">
+        <div className="mt-6 sm:mt-card-gap">
           {/* Phase swap is a crossfade: the three states are the same task at
               three moments, not three different places. */}
           <AnimatePresence mode="wait" initial={false}>
@@ -136,25 +136,25 @@ export function Screen() {
         </p>
 
         {/* ---------------- Standing notes ---------------- */}
-        <div className="mt-card-gap grid gap-card-gap lg:grid-cols-2">
-          <GlassCard variant="well" radius="panel" className="p-7">
+        <div className="mt-6 sm:mt-card-gap grid gap-4 sm:gap-6 md:grid-cols-2">
+          <GlassCard variant="well" radius="panel" className="p-5 sm:p-7">
             <p className="flex items-center gap-2.5 font-mono text-[9.5px] uppercase tracking-[0.14em] text-vitality-ink">
               <Shield className="h-3.5 w-3.5" />
               Data handling
             </p>
-            <p className="mt-4 text-[13.5px] leading-relaxed text-slate-warm">
+            <p className="mt-3.5 text-[13px] leading-relaxed text-slate-warm sm:mt-4 sm:text-[13.5px]">
               Inference runs entirely in this tab. No image, filename or result is
               transmitted, logged or persisted — reloading the page discards everything,
               which is also why there is no screening history to browse.
             </p>
           </GlassCard>
 
-          <GlassCard variant="well" radius="panel" className="p-7">
+          <GlassCard variant="well" radius="panel" className="p-5 sm:p-7">
             <p className="flex items-center gap-2.5 font-mono text-[9.5px] uppercase tracking-[0.14em] text-copper">
               <Bolt className="h-3.5 w-3.5" />
               Scope of the output
             </p>
-            <p className="mt-4 text-[13.5px] leading-relaxed text-slate-warm">
+            <p className="mt-3.5 text-[13px] leading-relaxed text-slate-warm sm:mt-4 sm:text-[13.5px]">
               {DISCLAIMER}
             </p>
           </GlassCard>
@@ -190,7 +190,7 @@ function PhaseSwap({
  */
 function ProcessTrack({ reached }: { reached: number }) {
   return (
-    <GlassCard radius="panel" className="overflow-hidden p-6 lg:p-7">
+    <GlassCard radius="panel" className="overflow-hidden p-5 sm:p-6 lg:p-7">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-slate-cool">
           Inference path
@@ -201,7 +201,7 @@ function ProcessTrack({ reached }: { reached: number }) {
       </div>
 
       <ol
-        className="mt-6 flex gap-1 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="mt-5 sm:mt-6 flex gap-1 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         data-lenis-prevent
       >
         {PIPELINE_STAGES.map((stage, i) => {
@@ -211,7 +211,7 @@ function ProcessTrack({ reached }: { reached: number }) {
           return (
             <li
               key={stage.label}
-              className="relative flex min-w-[7.5rem] flex-1 flex-col gap-3"
+              className="relative flex min-w-[5.8rem] sm:min-w-[6.5rem] md:min-w-0 md:flex-1 shrink-0 md:shrink flex-col gap-2.5 sm:gap-3"
               aria-current={active ? 'step' : undefined}
             >
               {/* Rail segment, then the node on top of it. The segment starts at

@@ -67,7 +67,7 @@ export function HeroControlPanel({ className }: { className?: string }) {
               return (
                 <li
                   key={stage.label}
-                  className="flex min-w-[6.5rem] flex-1 shrink-0 flex-col items-center gap-2"
+                  className="flex min-w-[5.2rem] sm:min-w-[5.8rem] md:min-w-0 flex-1 shrink-0 md:shrink flex-col items-center gap-2"
                 >
                   {/* Node + connectors on one row so the line meets the circle */}
                   <div className="flex w-full items-center">

@@ -40,12 +40,12 @@ export function DatasetSection() {
         titleId="dataset-title"
       />
 
-      <div className="mt-14 grid gap-card-gap lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="mt-10 sm:mt-14 grid gap-6 md:grid-cols-2 lg:gap-card-gap">
         {/* ---------- Loader ---------- */}
         <Reveal>
           <RevealItem>
             <div className="overflow-hidden rounded-panel border border-charcoal/10 bg-charcoal">
-              <div className="flex items-center justify-between gap-4 border-b border-white/10 px-6 py-4">
+              <div className="flex items-center justify-between gap-4 border-b border-white/10 px-4 py-3.5 sm:px-6 sm:py-4">
                 <span className="flex items-center gap-2.5 font-mono text-[10px] uppercase tracking-[0.14em] text-white/55">
                   <Database className="h-3.5 w-3.5" />
                   Hugging Face · datasets
@@ -74,7 +74,7 @@ export function DatasetSection() {
                 </button>
               </div>
 
-              <pre className="overflow-x-auto px-6 py-7 font-mono text-[12.5px] leading-[1.9] text-canvas">
+              <pre className="overflow-x-auto px-4 py-5 font-mono text-[11.5px] leading-[1.8] text-canvas sm:px-6 sm:py-7 sm:text-[12.5px] sm:leading-[1.9]">
                 <code>{DATASET.snippet}</code>
               </pre>
 
@@ -88,7 +88,7 @@ export function DatasetSection() {
               </p>
             </div>
 
-            <p className="mt-5 text-[12.5px] leading-relaxed text-slate-cool">
+            <p className="mt-4 sm:mt-5 text-[12.5px] leading-relaxed text-slate-cool">
               {DATASET.note}
             </p>
           </RevealItem>
@@ -97,7 +97,7 @@ export function DatasetSection() {
         {/* ---------- Facts ---------- */}
         <Reveal>
           <RevealItem>
-            <GlassCard variant="well" radius="panel" className="h-full p-8">
+            <GlassCard variant="well" radius="panel" className="h-full p-6 sm:p-8">
               <p className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-vitality-ink">
                 Corpus at a glance
               </p>

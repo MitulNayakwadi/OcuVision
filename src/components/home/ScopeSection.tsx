@@ -23,11 +23,11 @@ export function ScopeSection() {
         titleId="scope-title"
       />
 
-      <Reveal className="mt-12">
+      <Reveal className="mt-10 sm:mt-12">
         <RevealItem>
-          <div className="grid gap-card-gap lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid gap-6 lg:gap-card-gap lg:grid-cols-[0.9fr_1.1fr]">
             {/* ---- In scope ---- */}
-            <GlassCard radius="panel" className="flex flex-col p-8">
+            <GlassCard radius="panel" className="flex flex-col p-6 sm:p-7 lg:p-8">
               <p className="flex items-center gap-2.5 font-mono text-[9.5px] uppercase tracking-[0.14em] text-advisory-routine">
                 <Check className="h-3.5 w-3.5" />
                 Detected in this version

@@ -62,9 +62,9 @@ export function StatisticsSection() {
         titleId="statistics-title"
       />
 
-      <Reveal className="mt-12">
+      <Reveal className="mt-10 sm:mt-12">
         <RevealItem>
-          <GlassCard radius="panel" className="p-7 lg:p-8">
+          <GlassCard radius="panel" className="p-5 sm:p-7 lg:p-8">
             {/* ---- Header: figure, then the view toggle ---- */}
             <div className="flex flex-wrap items-start justify-between gap-6">
               <div>
@@ -148,11 +148,11 @@ export function StatisticsSection() {
                 </table>
               </div>
             ) : (
-              <div className="mt-8 h-[268px] w-full">
+              <div className="mt-8 h-[268px] w-full min-w-0">
                 <ResponsiveContainer width="100%" height="100%">
                   <AreaChart
                     data={WEEKLY_RISK}
-                    margin={{ top: 16, right: 16, bottom: 4, left: -20 }}
+                    margin={{ top: 16, right: 16, bottom: 4, left: -24 }}
                   >
                     <defs>
                       <linearGradient id="risk-fill" x1="0" y1="0" x2="0" y2="1">

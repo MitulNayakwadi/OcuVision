@@ -26,11 +26,11 @@ export function DiagnosticSection() {
         titleId="glaucoma-title"
       />
 
-      <div className="mt-12 grid gap-card-gap lg:grid-cols-[0.85fr_1.15fr]">
+      <div className="mt-10 grid gap-6 sm:mt-12 lg:gap-card-gap lg:grid-cols-[0.85fr_1.15fr]">
         {/* ---- Clinical detail ---- */}
         <Reveal>
           <RevealItem>
-            <GlassCard radius="panel" className="flex h-full flex-col p-8">
+            <GlassCard radius="panel" className="flex h-full flex-col p-6 sm:p-7 lg:p-8">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <Eyebrow tone="cool">{GLAUCOMA.modality}</Eyebrow>
                 <SeverityChip severity="watch" size="sm" label="Referable when detected" />
@@ -72,11 +72,11 @@ export function DiagnosticSection() {
         {/* ---- Performance ---- */}
         <Reveal>
           <RevealItem>
-            <GlassCard radius="panel" className="flex h-full flex-col p-7 lg:p-8">
+            <GlassCard radius="panel" className="flex h-full flex-col p-5 sm:p-7 lg:p-8">
               <Eyebrow withRule tone="vitality">
                 Validation sensitivity
               </Eyebrow>
-              <div className="mt-6 flex-1">
+              <div className="mt-6 flex-1 min-w-0">
                 <ConfidenceChart points={QUARTERLY_SENSITIVITY} diseaseName={GLAUCOMA.name} />
               </div>
             </GlassCard>
@@ -85,7 +85,7 @@ export function DiagnosticSection() {
       </div>
 
       {/* ---------- Severity ladder ---------- */}
-      <div className="mt-24">
+      <div className="mt-16 sm:mt-24">
         <Reveal className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <RevealItem>
             <Eyebrow withRule tone="warm">
@@ -102,14 +102,14 @@ export function DiagnosticSection() {
           </RevealItem>
         </Reveal>
 
-        <Reveal as="ul" stagger={0.08} className="grid gap-5 md:grid-cols-3">
+        <Reveal as="ul" stagger={0.08} className="grid gap-4 sm:gap-5 md:grid-cols-3">
           {STAGES.map((stage) => {
             const style = STAGE_STYLES[stage.id];
 
             return (
               <RevealItem as="li" key={stage.id}>
-                <GlassCard radius="panel" className="flex h-full flex-col p-7">
-                  <div className="flex items-center justify-between gap-3">
+                <GlassCard radius="panel" className="flex h-full flex-col p-5 sm:p-6 lg:p-7">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
                     <span
                       className={cn(
                         'inline-flex items-center gap-2 rounded-chip border px-3 py-1 font-mono text-[9.5px] uppercase tracking-[0.12em]',
@@ -126,11 +126,11 @@ export function DiagnosticSection() {
                     </span>
                   </div>
 
-                  <p className="mt-5 flex-1 text-[13px] leading-relaxed text-slate-warm">
+                  <p className="mt-4 flex-1 text-[13px] leading-relaxed text-slate-warm sm:mt-5">
                     {stage.description}
                   </p>
 
-                  <p className="mt-6 border-t border-slate-hair pt-4">
+                  <p className="mt-5 border-t border-slate-hair pt-4 sm:mt-6">
                     <SeverityChip severity={stage.severity} size="sm" />
                   </p>
                 </GlassCard>
