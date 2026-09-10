@@ -135,22 +135,6 @@ Fundus Image (224×224×3)
 
 ---
 
-## ☁️ Deploying to Vercel
-
-The project includes a ready-to-use [`vercel.json`](./vercel.json) rewrite rule configured for client-side routing.
-
-1. Push your repository to GitHub.
-2. Go to [Vercel Dashboard](https://vercel.com/new).
-3. Click **Add New** → **Project**, and import `MitulNayakwadi/OcuVision`.
-4. Keep default settings:
-   - **Framework Preset**: `Vite`
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-   - **Install Command**: `npm install`
-5. Click **Deploy**.
-
----
-
 ## 👥 Authors & Team
 
 - **Mitul Nayakwadi** — *Developer / Project Head*  
