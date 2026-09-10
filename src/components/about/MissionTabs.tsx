@@ -170,10 +170,10 @@ function RoadmapChips() {
   );
 }
 
-/** The two profile cards, each opening the shared dialog. */
+/** Profile cards opening the shared dialog. */
 function TeamCards({ onOpen }: { onOpen: (member: TeamMember) => void }) {
   return (
-    <ul className="mt-8 grid gap-5 border-t border-slate-hair pt-7 sm:grid-cols-2">
+    <ul className="mt-8 grid gap-5 border-t border-slate-hair pt-7 sm:grid-cols-2 lg:grid-cols-3">
       {TEAM.map((member) => (
         <li key={member.id}>
           <GlassCard

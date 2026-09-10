@@ -157,7 +157,8 @@ The project includes a ready-to-use [`vercel.json`](./vercel.json) rewrite rule 
   Model architecture, Vision Transformer training, explainability pipeline, and screening platform interface.
 - **P. Sai Sreenath** — *Cybersecurity Specialist*  
   Biometric data protection, de-identification architecture, access control, and clinical data governance.
-
+- **Md.Mudabbir Ali khan** — *Developer*  
+   
 ---
 
 ## ⚠️ Medical Disclaimer
