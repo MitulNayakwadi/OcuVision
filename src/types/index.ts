@@ -88,6 +88,31 @@ export interface ScreeningResult {
   rnflDefect: boolean;
   attentionRegions: AttentionRegion[];
   latencyMs: number;
+  source?: 'pytorch' | 'mock';
+  checkpoint?: string | null;
+  architecture?: string | null;
+}
+
+export interface CheckpointInfo {
+  name: string;
+  path: string;
+  size_bytes: number;
+  size_formatted: string;
+  modified_at: string;
+  is_active: boolean;
+}
+
+export interface ModelStatus {
+  connected: boolean;
+  model_loaded: boolean;
+  active_checkpoint: string | null;
+  available_checkpoints: CheckpointInfo[];
+  device: string;
+  architecture: string;
+  total_parameters: string;
+  classes: string[];
+  last_loaded_at: string | null;
+  error: string | null;
 }
 
 export interface AttentionRegion {

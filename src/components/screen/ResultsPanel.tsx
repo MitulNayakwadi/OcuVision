@@ -53,7 +53,11 @@ export function ResultsPanel({
             Step 03 · Report
           </Eyebrow>
           <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-slate-cool">
-            {result.latencyMs} ms · {image.isDicom ? 'DICOM' : 'Colour fundus'}
+            {result.source === 'pytorch'
+              ? `PyTorch (${result.checkpoint || 'best_model.pth'}) · ${result.latencyMs} ms`
+              : `Demo simulation · ${result.latencyMs} ms`}
+            {' · '}
+            {image.isDicom ? 'DICOM' : 'Colour fundus'}
           </span>
         </div>
 
@@ -64,6 +68,18 @@ export function ResultsPanel({
             <h2 className="mt-3 sm:mt-4 font-display text-[clamp(1.35rem,3.4vw,2.4rem)] uppercase leading-[1.05] text-charcoal">
               {result.detected ? VERDICT.positive : VERDICT.negative}
             </h2>
+
+            {result.source === 'pytorch' ? (
+              <p className="mt-2 inline-flex items-center gap-1.5 rounded-chip bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-0.5 font-mono text-[9.5px] uppercase tracking-[0.1em] text-emerald-800">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                Live model: {result.checkpoint || 'best_model.pth'} ({result.architecture || 'ViT-Base/16'})
+              </p>
+            ) : (
+              <p className="mt-2 inline-flex items-center gap-1.5 rounded-chip bg-amber-500/10 border border-amber-500/25 px-2.5 py-0.5 font-mono text-[9.5px] uppercase tracking-[0.1em] text-amber-800">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+                Demonstration mode
+              </p>
+            )}
 
             {/* Stage only exists on a positive screen — on a negative one there is
                 nothing to stage, and inventing an "Early" chip would read as a

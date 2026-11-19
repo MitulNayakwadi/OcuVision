@@ -59,3 +59,16 @@ out/
 *.sln
 *.sw?
 .claude/
+
+# PyTorch models and checkpoints
+*.pth
+*.pt
+*.onnx
+models/*.pth
+models/*.pt
+!models/README.md
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class

@@ -41,11 +41,15 @@ export function UploadZone({
   onSelect,
   onClear,
   onAnalyze,
+  isLiveModel,
+  activeModelName,
 }: {
   image: UploadedImage | null;
   onSelect: (image: UploadedImage) => void;
   onClear: () => void;
   onAnalyze: () => void;
+  isLiveModel?: boolean;
+  activeModelName?: string | null;
 }) {
   const inputId = `upload-${useId().replace(/:/g, '')}`;
   const inputRef = useRef<HTMLInputElement>(null);
@@ -204,7 +208,9 @@ export function UploadZone({
       <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-slate-hair pt-5 sm:pt-6">
         <p className="max-w-xs text-[11.5px] leading-relaxed text-slate-cool">
           {image
-            ? 'Inference runs locally against the demonstration model. Results are illustrative.'
+            ? isLiveModel
+              ? `Inference will run using PyTorch ViT-Base/16 checkpoint: ${activeModelName || 'best_model.pth'}.`
+              : 'Inference runs locally against the demonstration model. Results are illustrative.'
             : 'Load an image to enable analysis.'}
         </p>
 

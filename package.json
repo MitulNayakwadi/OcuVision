@@ -6,6 +6,8 @@
   "description": "OcuVision — Vision Transformer-Based Ophthalmic Disease Detection and Advisory System",
   "scripts": {
     "dev": "vite",
+    "backend": "python server.py",
+    "create-checkpoints": "python backend/create_sample_checkpoints.py",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"

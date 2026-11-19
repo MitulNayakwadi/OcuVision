@@ -112,23 +112,40 @@ Fundus Image (224×224×3)
    cd OcuVision
    ```
 
-2. **Install dependencies**:
+2. **Install frontend dependencies**:
    ```bash
    npm install
    ```
 
-3. **Start development server**:
+3. **Link PyTorch `.pth` Model (Optional / Live Mode)**:
+   Place your trained PyTorch weights in the `models/` directory:
+   - `models/best_model.pth`
+   - `models/latest_checkpoint.pth`
+
+   *(Or generate sample checkpoint templates for testing)*:
+   ```bash
+   npm run create-checkpoints
+   ```
+
+   Start the PyTorch Model API backend:
+   ```bash
+   npm run backend
+   # or: python server.py
+   ```
+
+4. **Start the frontend development server**:
    ```bash
    npm run dev
    ```
    Open [http://localhost:5173](http://localhost:5173) in your browser.
+   Navigate to the **Screening Console** (`/screen`) — your `best_model.pth` and `latest_checkpoint.pth` models will be automatically detected, linked, and ready for real-time inference with explainable attention maps!
 
-4. **Build for production**:
+5. **Build for production**:
    ```bash
    npm run build
    ```
 
-5. **Preview production build**:
+6. **Preview production build**:
    ```bash
    npm run preview
    ```

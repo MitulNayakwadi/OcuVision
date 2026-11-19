@@ -22,7 +22,15 @@ const TOTAL = STAGES.reduce((sum, s) => sum + s.ms, 0);
  * path as it passes, because a spinner that says nothing invites the user to assume
  * the wait is arbitrary — and here it maps to actual work.
  */
-export function AnalyzingState({ onComplete }: { onComplete: () => void }) {
+export function AnalyzingState({
+  onComplete,
+  checkpointName,
+  isLiveModel,
+}: {
+  onComplete: () => void;
+  checkpointName?: string | null;
+  isLiveModel?: boolean;
+}) {
   const [stage, setStage] = useState(0);
   const reduced = useReducedMotionSafe();
 
@@ -49,7 +57,9 @@ export function AnalyzingState({ onComplete }: { onComplete: () => void }) {
           Step 02 · Inference
         </Eyebrow>
         <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-slate-cool">
-          ViT-Base/16 · local demo
+          {isLiveModel
+            ? `ViT-Base/16 · PyTorch (${checkpointName || 'best_model.pth'})`
+            : 'ViT-Base/16 · local demo'}
         </span>
       </div>
 
